@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="icon" type="image/png" href="icon/pokeball.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+</head>
+<body>
+    <div class="main-container">
+        <!-- alphabet filter -->
+        <div class="sidebar" id="alphabetSidebar"></div>
+        
+        <!-- main -->
+        <div class="content">
+            <div class="search-container">
+                <h1>Pokédex</h1>
+                <h4>(Made with PokéAPI)</h4>
+                <input type="text" id="pokemonSearch" placeholder="Search Pokémon...">
+            </div>
+            <div id="pokemonContainer"></div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

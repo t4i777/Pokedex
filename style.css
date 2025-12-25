@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", sans-serif;
+}
+
+/* layout */
+
+body { 
+    background: #f0f0f0;
+    padding: 20px;
+    padding-left: 100px;      /* space for fixed sidebar */
+    min-height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.content {
+    flex: 1;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0;
+    color: #333;
+    font-size: 32px;
+}
+
+/* search input */
+
+#pokemonSearch {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+    width: 350px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    background: #fff;
+}
+
+#pokemonSearch:focus {
+    border-color: #4CAF50;
+}
+
+/* grid */
+
+#pokemonContainer { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 25px;
+    padding-bottom: 20px;
+}
+
+/* alphabet sidebar */
+
+.sidebar {
+    width: 60px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+    overflow: hidden;
+    z-index: 100;
+}
+
+.letter-btn {
+    width: 50px;
+    height: 28px;
+    margin: 0;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: all 0.2s;
+    flex: 1;
+}
+
+.letter-btn:hover,
+.letter-btn.active {
+    background: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+    transform: scale(1.02);
+}
+
+/* pokémon cards */
+
+.pokemon-card {
+    border-radius: 12px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.pokemon-card.hidden {
+    display: none;
+}
+
+.pokemon-card .pokemon-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* sprites */
+
+.pokemon-card img {
+    width: 110px;
+    height: 110px;
+    image-rendering: pixelated;
+    margin: 0 auto 10px auto;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}
+
+/* id, types, abilities */
+
+.pokemon-card .pokemon-id {
+    font-weight: bold;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.pokemon-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.type-badge {
+    padding: 5px 10px;
+    border-radius: 18px;
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+.type-normal    { background: #A8A878; }
+.type-fire      { background: #F08030; }
+.type-water     { background: #6890F0; }
+.type-electric  { background: #F8D030; }
+.type-grass     { background: #78C850; }
+.type-ice       { background: #98D8D8; }
+.type-fighting  { background: #C03028; }
+.type-poison    { background: #A040A0; }
+.type-ground    { background: #E0C068; }
+.type-flying    { background: #A890F0; }
+.type-psychic   { background: #F85888; }
+.type-bug       { background: #A8B820; }
+.type-rock      { background: #B8A038; }
+.type-ghost     { background: #705898; }
+.type-dragon    { background: #7038F8; }
+.type-dark      { background: #705848; }
+.type-steel     { background: #B8B8D0; }
+.type-fairy     { background: #EE99AC; }
+
+.pokemon-card .pokemon-abilities {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+/* no results message */
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #666;
+}
