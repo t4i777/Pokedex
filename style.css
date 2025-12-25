@@ -207,3 +207,82 @@ h1 {
     font-size: 18px;
     color: #666;
 }
+
+/* mobile layout tweaks */
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+        padding-left: 10px;      /* remove big left gutter on phone */
+    }
+
+    .main-container {
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    /* Sidebar: shrink and move right so cards have more room */
+    .sidebar {
+        width: 40px;
+        left: 5px;
+        padding: 6px 3px;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+    }
+
+    .letter-btn {
+        width: 34px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+
+    .content {
+        margin-left: 50px;       /* just enough to clear sidebar */
+    }
+
+    .search-container {
+        margin-bottom: 15px;
+    }
+
+    #pokemonSearch {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 24px;
+    }
+
+    /* Cards: full-width, single column */
+    #pokemonContainer {
+        grid-template-columns: 1fr;   /* ✅ one card per row */
+        gap: 16px;
+    }
+
+    .pokemon-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+
+    .pokemon-card img {
+        width: 96px;
+        height: 96px;
+    }
+
+    .pokemon-card .pokemon-name {
+        font-size: 18px;
+    }
+
+    .pokemon-card .pokemon-id {
+        font-size: 14px;
+    }
+
+    .type-badge {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .pokemon-card .pokemon-abilities {
+        font-size: 10px;
+    }
+}
